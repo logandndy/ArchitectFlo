@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Bebas Neue';
+  --font-body: 'Playfair Display';
+  --font-mono: 'IBM Plex Mono';
+
+  --raw-black: #0A0A0A;
+  --raw-white: #F2EFE9;
+  --raw-concrete: #C8C4BC;
+  --raw-steel: #6B6B6B;
+  --raw-accent: #D4521A;
+  --raw-grid: #1A1A1A;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--raw-black);
+  color: var(--raw-white);
+  font-family: var(--font-body), serif;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--raw-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--raw-accent);
+}
+
+/* Selection */
+::selection {
+  background: var(--raw-accent);
+  color: var(--raw-white);
+}
+
+/* Grid background utility */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(242,239,233,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242,239,233,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Noise overlay */
+.noise::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Brutal border utility */
+.border-brutal {
+  border: 1px solid rgba(242,239,233,0.12);
+}
+
+/* Accent line */
+.accent-line {
+  width: 3rem;
+  height: 2px;
+  background-color: var(--raw-accent);
+}
+
+/* Animate fade up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Horizontal marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+/* Reveal line */
+@keyframes revealLine {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.reveal-line {
+  transform-origin: left;
+  animation: revealLine 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
