@@ -11,6 +11,11 @@ export default function Home() {
       <Hero />
       <StatsBar />
       <Projets />
+      <div className="section-bridge hidden md:flex">
+        <span className="section-bridge-line" />
+        <span className="section-bridge-mark" />
+        <span className="section-bridge-line" />
+      </div>
       <Tarifs />
       <Temoignages />
       <Contact />

@@ -84,9 +84,7 @@ export default function Hero() {
       {/* ══ COLONNE GAUCHE ══ */}
       <div className="hero-v2-left">
 
-        <div className="hero-v2-topline anim-up d1" />
-
-        <div className="hero-v2-eyebrow anim-up d1">
+        <div className="hero-v2-eyebrow anim-up d1" style={{marginTop: '2rem'}}>
           <span className="sec-eyebrow-line" />
           <p className="t-label">Architecte DPLG</p>
         </div>

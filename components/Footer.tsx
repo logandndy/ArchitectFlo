@@ -9,7 +9,7 @@ export default function Footer() {
           <p className="footer-sub">Architecte DPLG — Occitanie, France</p>
         </div>
         <nav className="flex items-center gap-8">
-          {[['/#projets','Projets'],['/#tarifs','Tarifs'],['/#contact','Contact']].map(([href,label]) => (
+          {[['/#projets','Projets'],['/#tarifs','Tarifs'],['/#temoignages','Témoignages'],['/#contact','Contact']].map(([href,label]) => (
             <Link key={href} href={href} className="footer-link">{label}</Link>
           ))}
         </nav>

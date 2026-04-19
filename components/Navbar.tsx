@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 const links = [
-  { href: '/#projets', label: 'Projets' },
-  { href: '/#tarifs',  label: 'Tarifs'  },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/#projets',      label: 'Projets'      },
+  { href: '/#tarifs',       label: 'Tarifs'       },
+  { href: '/#temoignages',  label: 'Témoignages'  },
+  { href: '/#contact',      label: 'Contact'      },
 ]
 
 export default function Navbar() {

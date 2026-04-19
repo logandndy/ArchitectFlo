@@ -39,12 +39,37 @@ export default function Projets() {
                 <span className="proj-tag">{projet.categorie}</span>
               </div>
 
-              <Link href={`/projets/${projet.id}`} className="btn-details" onClick={e => e.stopPropagation()}>
-                Détails
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                  <path d="M1 5h8M6 2l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+              {/* Thumbnail desktop */}
+              <div className="proj-thumb">
+                <Image
+                  src={projet.image_principale}
+                  alt={projet.titre}
+                  fill
+                  sizes="80px"
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Toggle chevron — mobile uniquement */}
+              <button
+                className={`proj-toggle md:hidden${active === projet.id ? ' open' : ''}`}
+                onClick={() => setActive(active === projet.id ? null : projet.id)}
+                aria-label="Voir le projet"
+              >
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 5l5 5 5-5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </Link>
+              </button>
+
+              {/* Détails desktop uniquement */}
+              <div className="hidden md:flex">
+                <Link href={`/projets/${projet.id}`} className="btn-details" onClick={e => e.stopPropagation()}>
+                  Détails
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                    <path d="M1 5h8M6 2l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+                  </svg>
+                </Link>
+              </div>
             </div>
 
             {/* Accordéon */}
@@ -59,12 +84,15 @@ export default function Projets() {
                   <div className="flex flex-wrap gap-2 mt-4">
                     {projet.tags.map(tag => <span key={tag} className="proj-tag">{tag}</span>)}
                   </div>
-                  <Link href={`/projets/${projet.id}`} className="link-proj mt-6 self-start">
-                    Voir le projet complet
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
-                    </svg>
-                  </Link>
+                  {/* Lien vers projet complet — mobile uniquement dans l'accordéon */}
+                  <div className="mt-6">
+                    <Link href={`/projets/${projet.id}`} className="btn-details">
+                      Voir le projet complet
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                        <path d="M1 5h8M6 2l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
