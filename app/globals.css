@@ -1366,8 +1366,17 @@ body {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to bottom, rgba(12,11,10,0) 40%, rgba(12,11,10,0.85) 100%),
-    linear-gradient(160deg, rgba(12,11,10,0.2) 0%, rgba(12,11,10,0.05) 50%, transparent 100%);
+    linear-gradient(
+      to bottom,
+      rgba(12, 11, 10, 0) 40%,
+      rgba(12, 11, 10, 0.85) 100%
+    ),
+    linear-gradient(
+      160deg,
+      rgba(12, 11, 10, 0.2) 0%,
+      rgba(12, 11, 10, 0.05) 50%,
+      transparent 100%
+    );
 }
 
 .detail-back {
@@ -1568,8 +1577,6 @@ body {
   }
 }
 
-.detail-body-text {
-}
 .detail-paragraphs {
   display: flex;
   flex-direction: column;
