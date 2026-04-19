@@ -20,9 +20,8 @@ export default function Hero() {
   const [currentIdx, setCurrentIdx]   = useState(0)
   const isAnimating = useRef(false)
 
-  // Compteur animé
   useEffect(() => {
-    const target = 2024, start = 2010, dur = 1400, t0 = performance.now()
+    const start = 2026, target = 1991, dur = 1400, t0 = performance.now()
     const run = (now: number) => {
       const p = Math.min((now - t0) / dur, 1)
       const e = 1 - Math.pow(1 - p, 3)
@@ -102,8 +101,7 @@ export default function Hero() {
         <div className="hero-v2-sep anim-line d3" />
 
         <p className="hero-v2-tagline anim-up d4">
-          Concevoir des espaces qui résistent au temps.{' '}
-          <em>Réhabilitation, extension, aménagement intérieur</em> — chaque projet porte une intention.
+          <em>Réhabilitation, extension, construction, diagnostics, urbanisme</em>
         </p>
 
         <div className="hero-v2-cta anim-up d4">
@@ -126,10 +124,10 @@ export default function Hero() {
 
         <div className="hero-v2-counter anim-up d1">
           <p className="t-label">Depuis</p>
-          <p className="hero-v2-counter-year"><span ref={counterRef}>2010</span></p>
+          <p className="hero-v2-counter-year"><span ref={counterRef}>2026</span></p>
         </div>
 
-        <div className="hero-v2-scroll scroll-hint">
+<div className="hero-v2-scroll scroll-hint">
           <p className="t-label" style={{fontSize:'.5rem'}}>Scroll</p>
           <div className="hero-v2-scroll-line" />
         </div>

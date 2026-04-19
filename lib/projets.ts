@@ -16,18 +16,18 @@ export interface Projet {
 
 export const projets: Projet[] = [
   {
-    id: 'maison-l',
+    id: 'maison-f',
     numero: '01',
-    titre: 'Maison L',
-    sous_titre: 'Réhabilitation totale d\'une maison de village',
-    lieu: 'Ariège, Occitanie',
-    annee: '2023',
-    surface: '180 m²',
-    categorie: 'Réhabilitation',
-    description: 'Transformer sans effacer. Une bâtisse du XVIIIe remise en vie par la matière brute et la lumière dirigée.',
-    description_longue: `Une maison de village en pierre de l'Ariège, abandonnée depuis vingt ans. L'enjeu : révéler ce que le temps avait voilé sans trahir ce que la pierre avait mémorisé.
+    titre: 'Maison F',
+    sous_titre: 'Réhabilitation totale d\'une maison de ville et projet d\'extension',
+    lieu: 'Foix, Ariège',
+    annee: '2021',
+    surface: '106 m²',
+    categorie: 'Réhabilitation · Extension < 20 m²',
+    description: 'Transformer sans effacer. Une ancienne maison longtemps inoccupée, remise en vie par la lumière dirigée et le prolongement de l\'espace de vie sur le jardin.',
+    description_longue: `Une maison de ville très ancienne, inoccupée depuis très longtemps. L'enjeu : redistribuer les pièces de vie du rez-de-chaussée en privilégiant l'accès au jardin et la lumière.
 
-Chaque intervention a été pensée comme un dialogue entre l'existant et le contemporain. Les enduits à la chaux laissent respirer les murs, le béton ciré au sol crée un contraste assumé avec les poutres apparentes. La lumière, guidée par des ouvertures percées chirurgicalement, traverse les espaces comme elle ne l'avait jamais fait.
+Chaque intervention a été pensée comme un dialogue entre l'existant et le contemporain. Le zinc de la couverture de l'extension ajoute noblesse et pérennité à l'édifice. La lumière, guidée par de larges ouvertures, traverse les nouveaux espaces comme elle ne l'avait jamais fait.
 
 Le résultat : un espace habitable qui porte ses cicatrices avec dignité.`,
     image_principale: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80',
@@ -35,29 +35,29 @@ Le résultat : un espace habitable qui porte ses cicatrices avec dignité.`,
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
       'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&q=80',
     ],
-    tags: ['Pierre', 'Réhabilitation', 'Chaux', 'Lumière naturelle'],
+    tags: ['Ancien', 'Réhabilitation', 'Zinc', 'Lumière naturelle'],
   },
   {
-    id: 'extension-r',
+    id: 'immeuble-f',
     numero: '02',
-    titre: 'Extension R',
-    sous_titre: 'Extension contemporaine sur maison ancienne',
-    lieu: 'Toulouse, Haute-Garonne',
-    annee: '2022',
-    surface: '65 m²',
-    categorie: 'Extension',
-    description: 'Greffer le neuf sur l\'ancien. Une extension en acier cor-ten et verre qui dialogue avec la brique toulousaine.',
-    description_longue: `Un pavillon des années 50 en brique rouge. Propriétaires souhaitant agrandir sans dénaturer. La réponse : une extension affirmée, qui ne cherche pas à se fondre mais à converser.
+    titre: 'Immeuble F',
+    sous_titre: 'Réhabilitation d\'un immeuble de 3 logements',
+    lieu: 'Foix, Ariège',
+    annee: '2020',
+    surface: '211 m²',
+    categorie: 'Réhabilitation',
+    description: 'Conception de 3 logements locatifs T3. Restructuration du dernier étage très dégradé, dans le respect du site patrimonial remarquable de Foix.',
+    description_longue: `Un projet architectural sensible, situé dans le périmètre du site patrimonial remarquable (SPR) de la ville de Foix. La restauration a exigé un soin particulier : préserver l'identité de l'immeuble tout en répondant aux exigences d'un habitat contemporain.
 
-Structure en acier cor-ten, dont la rouille assumée répond à la chaleur de la brique ancienne. Façade vitrée qui prolonge le jardin vers l'intérieur. Le joint entre les deux époques est volontairement marqué, lisible, honnête.
+Trois logements locatifs T3, restructurés pièce par pièce. Le dernier étage, très dégradé, a fait l'objet d'une rénovation complète. Chaque décision — matériaux, ouvertures, gabarit — a été pensée en dialogue avec les prescriptions du SPR.
 
-L'extension fait 65m² mais elle transforme la perception de toute la maison.`,
+Le résultat : une rénovation urbaine ambitieuse, qui intègre les fonctionnalités modernes sans trahir le contexte historique.`,
     image_principale: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
     images: [
       'https://images.unsplash.com/photo-1565182999561-18d7dc61c393?w=800&q=80',
       'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80',
     ],
-    tags: ['Acier cor-ten', 'Extension', 'Verre', 'Brique'],
+    tags: ['Enduit à la chaux', 'Bois', 'Corniche'],
   },
   {
     id: 'loft-m',

@@ -3,18 +3,18 @@ import { useRef, useState, useEffect } from 'react'
 
 const avis = [
   {
-    nom: 'Marie & Julien Fabre',
-    projet: 'Réhabilitation — Maison de village, Ariège',
-    annee: '2023',
+    nom: 'Gabrielle et Christian',
+    projet: 'Conception · Permis de construire · Maison neuve à Brassac, Ariège',
+    annee: '2025',
     note: 5,
-    texte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    texte: "Nous avons le plaisir de partager avec vous cette très bonne nouvelle tant attendue. Avec un travail si bien préparé, cela ne pouvait être que favorable. Merci encore pour la qualité de votre prestation et l'attention portée à ce projet.",
   },
   {
-    nom: 'Atelier Tessier',
-    projet: 'Aménagement intérieur — Loft industriel, Bordeaux',
-    annee: '2024',
+    nom: 'MPBA Menuiseries PVC, Bois, Alu',
+    projet: 'Pool house et pergola bioclimatique',
+    annee: '2025',
     note: 5,
-    texte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    texte: "À la suite d'un projet mis à l'étude par l'architecte Florence Jarlan-Muñoz, cette pergola devient un véritable atout charme pour cette maison !",
   },
   {
     nom: 'Sophie Lardent',

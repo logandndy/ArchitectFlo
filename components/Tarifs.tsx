@@ -5,19 +5,19 @@ const prestations = [
     id:'01', titre:'Esquisse & Faisabilité',
     description:"Analyse du site, étude des contraintes réglementaires, premières intentions spatiales. Le point de départ de tout projet.",
     inclus:["Analyse du site et du programme","Étude de faisabilité","Esquisses et premières propositions","Réunion de cadrage"],
-    tarif:"À partir de 1 500 €", unite:'forfait', highlight:false,
+    tarif:"1 800 €", unite:'forfait', highlight:false,
   },
   {
     id:'02', titre:'Mission Complète',
     description:"De l'esquisse au suivi de chantier. La mission la plus complète pour un résultat maîtrisé, du crayon à la clef.",
     inclus:["Esquisse + Avant-Projet","Permis de construire ou déclaration","Dossier de consultation des entreprises","Suivi de chantier et réception"],
-    tarif:"8 – 12% du coût travaux", unite:'honoraires', highlight:true,
+    tarif:"10 – 15% du montant HT des travaux", unite:'honoraires', highlight:true,
   },
   {
-    id:'03', titre:'Conseil & Accompagnement',
+    id:'03', titre:'Visite Conseil',
     description:"Pour les projets qui nécessitent un regard expert ponctuel. Analyse, orientations, aide à la décision.",
-    inclus:["Consultation sur rendez-vous","Analyse de plans existants","Conseil réglementaire","Aide à la sélection d'entreprises"],
-    tarif:"150 €", unite:'/ heure', highlight:false,
+    inclus:["Déplacement, visite sur site","Diagnostic complet","Conseil réglementaire","Aide à la rénovation énergétique"],
+    tarif:"250 € TTC", unite:'125 €/heure', highlight:false,
   },
 ]
 

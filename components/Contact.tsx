@@ -1,9 +1,9 @@
 'use client'
 import { useState, useEffect } from 'react'
 
-const EMAIL_PARTS = ['contact','@','florence-jarlanmunoz','.','fr']
-const PHONE_DISPLAY = '+33 (0)6 00 00 00 00'
-const PHONE_HREF    = 'tel:+33600000000'
+const EMAIL_PARTS = ['f.jarlanmunoz','@','gmail','.','com']
+const PHONE_DISPLAY = '06 13 19 09 11'
+const PHONE_HREF    = 'tel:+33613190911'
 
 export default function Contact() {
   const [visible, setVisible] = useState(false)
@@ -34,7 +34,7 @@ export default function Contact() {
             Vous avez un projet de réhabilitation, d&apos;extension ou d&apos;aménagement ? Je suis disponible pour une première consultation sans engagement.
           </p>
           <p className="t-body-dark italic mb-10">
-            Je travaille principalement en Occitanie et dans le Sud-Ouest, mais reste ouverte à des projets sur l&apos;ensemble du territoire français.
+            Je travaille principalement en Occitanie — l&apos;Ariège, la Haute-Garonne, le Gers.
           </p>
           <div className="badge-dispo">
             <span className="badge-dot" />
@@ -69,9 +69,8 @@ export default function Contact() {
 
           {/* Légal */}
           <p className="t-label-dark leading-loose">
-            Florence Jarlan-Munoz — Architecte DPLG<br/>
-            Membre de l&apos;Ordre des Architectes d&apos;Occitanie<br/>
-            SIRET : 000 000 000 00000
+            Florence Jarlan-Muñoz — Architecte DPLG<br/>
+            SIRET : 890 593 007 00010
           </p>
         </div>
       </div>

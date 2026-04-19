@@ -1,9 +1,9 @@
 export default function StatsBar() {
   const stats = [
-    { num: '14',       label: 'Années\nd\'expérience'     },
-    { num: '38',       label: 'Projets\nlivrés'           },
-    { num: '4 200 m²', label: 'Surface\nconstruite'       },
-    { num: '100%',     label: 'Missions\ncomplètes'       },
+    { num: '35',         label: 'Années\nd\'expérience'              },
+    { num: '140',        label: 'Projets\nlivrés'                    },
+    { num: '~14 000 m²', label: 'Surface\nconstruite'               },
+    { num: '100%',       label: 'Missions complètes\net partielles'  },
   ]
 
   return (
