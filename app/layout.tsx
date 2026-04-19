@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="fr">
       <body className="noise">
         <Navbar />
-        <main>{children}</main>
+<main>{children}</main>
         <Footer />
       </body>
     </html>

@@ -30,10 +30,10 @@ export default function Contact() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
 
         <div>
-          <p className="t-body-dark text-lg mb-8">
+          <p className="t-body-dark text-lg mb-8" style={{color:'rgba(232,227,225,0.75)'}}>
             Vous avez un projet de réhabilitation, d&apos;extension ou d&apos;aménagement ? Je suis disponible pour une première consultation sans engagement.
           </p>
-          <p className="t-body-dark italic mb-10">
+          <p className="t-body-dark italic mb-10" style={{color:'rgba(232,227,225,0.6)'}}>
             Je travaille principalement en Occitanie — l&apos;Ariège, la Haute-Garonne, le Gers.
           </p>
           <div className="badge-dispo">

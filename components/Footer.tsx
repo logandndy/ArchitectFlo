@@ -15,6 +15,16 @@ export default function Footer() {
         </nav>
         <p className="footer-sub">© {new Date().getFullYear()} — Tous droits réservés</p>
       </div>
+      <div className="footer-credits">
+        <a
+          href="https://portfolio-loganddy.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-dev-link"
+        >
+          Développé par NextEvoWeb
+        </a>
+      </div>
     </footer>
   )
 }

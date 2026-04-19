@@ -413,6 +413,11 @@ body {
   gap: 0.5rem;
   opacity: 0.35;
 }
+@media (max-width: 1023px) {
+  .hero-v2-scroll {
+    display: none;
+  }
+}
 @media (min-width: 1024px) {
   .hero-v2-scroll {
     left: clamp(1.5rem, 6vw, 6rem);
@@ -922,7 +927,11 @@ body {
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  transition: background 0.25s;
+  transition: background 0.25s, box-shadow 0.25s;
+  box-shadow:
+    0 1px 3px rgba(12, 11, 10, 0.06),
+    0 6px 20px rgba(12, 11, 10, 0.08),
+    0 16px 40px rgba(12, 11, 10, 0.05);
 }
 .tarif-card:hover {
   background: var(--hover);
@@ -943,6 +952,10 @@ body {
 }
 .tarif-card.featured {
   background: var(--black);
+  box-shadow:
+    0 2px 8px rgba(12, 11, 10, 0.18),
+    0 12px 32px rgba(12, 11, 10, 0.22),
+    0 32px 64px rgba(12, 11, 10, 0.16);
 }
 .tarif-card.featured:hover {
   background: #1a1210;
@@ -956,7 +969,7 @@ body {
   margin-bottom: 2rem;
 }
 .tarif-card.featured .tarif-card-num {
-  color: var(--on-dark-ghost);
+  color: rgba(232, 227, 225, 0.5);
 }
 .tarif-title {
   font-family: var(--f-display);
@@ -979,7 +992,7 @@ body {
   flex: 1;
 }
 .tarif-card.featured .tarif-desc {
-  color: var(--on-dark-ghost);
+  color: rgba(232, 227, 225, 0.7);
 }
 .tarif-list {
   list-style: none;
@@ -1001,10 +1014,10 @@ body {
   flex-shrink: 0;
 }
 .tarif-card.featured .tarif-list li {
-  color: var(--on-dark-ghost);
+  color: rgba(232, 227, 225, 0.75);
 }
 .tarif-card.featured .tarif-list li::before {
-  color: var(--on-dark-ghost);
+  color: rgba(232, 227, 225, 0.45);
 }
 .tarif-footer {
   border-top: 1px solid rgba(12, 11, 10, 0.1);
@@ -1022,7 +1035,7 @@ body {
   margin-bottom: 0.25rem;
 }
 .tarif-card.featured .tarif-unite {
-  color: var(--on-dark-ghost);
+  color: rgba(232, 227, 225, 0.6);
 }
 .tarif-price {
   font-family: var(--f-display);
@@ -1034,6 +1047,115 @@ body {
 .tarif-card.featured .tarif-price {
   color: var(--on-dark);
 }
+
+/* Desktop stagger reveal */
+.tarifs-desktop[data-reveal].in-view .tarif-card:nth-child(1) { animation: revealUp 0.7s 0s    both; }
+.tarifs-desktop[data-reveal].in-view .tarif-card:nth-child(2) { animation: revealUp 0.7s 0.13s both; }
+.tarifs-desktop[data-reveal].in-view .tarif-card:nth-child(3) { animation: revealUp 0.7s 0.26s both; }
+
+/* Mobile cartes empilées */
+.tarifs-mobile-section {
+  padding: 1.5rem clamp(1.25rem, 5vw, 2rem) clamp(3rem, 8vw, 5rem);
+}
+.tarifs-mobile-title {
+  font-family: var(--f-display);
+  font-size: 2.8rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 1.75rem;
+}
+.tarifs-mobile-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid rgba(12, 11, 10, 0.15);
+  margin-bottom: 2rem;
+}
+.tarifs-mobile-card {
+  padding: 1.25rem 1.25rem 1.25rem;
+  border-bottom: 1px solid rgba(12, 11, 10, 0.12);
+  background: var(--sand);
+}
+.tarifs-mobile-card:last-child {
+  border-bottom: none;
+}
+.tarifs-mobile-card.featured {
+  background: var(--black);
+}
+.tarifs-mobile-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+.tarifs-mobile-card-title {
+  font-family: var(--f-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+.tarifs-mobile-card.featured .tarifs-mobile-card-title {
+  color: var(--on-dark);
+}
+.tarifs-mobile-price-block {
+  text-align: right;
+  flex-shrink: 0;
+}
+.tarifs-mobile-price {
+  font-family: var(--f-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1;
+}
+.tarifs-mobile-card.featured .tarifs-mobile-price {
+  color: var(--on-dark);
+}
+.tarifs-mobile-unite {
+  font-family: var(--f-mono);
+  font-size: 0.48rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+.tarifs-mobile-card.featured .tarifs-mobile-unite {
+  color: rgba(232, 227, 225, 0.5);
+}
+.tarifs-mobile-desc {
+  font-family: var(--f-body);
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+.tarifs-mobile-card.featured .tarifs-mobile-desc {
+  color: rgba(232, 227, 225, 0.6);
+}
+.tarifs-mobile-card.featured .tarif-list li {
+  color: rgba(232, 227, 225, 0.8);
+}
+.tarifs-mobile-card.featured .tarif-list li::before {
+  color: rgba(232, 227, 225, 0.4);
+}
+.tarifs-mobile-card .tarif-list {
+  margin-bottom: 0;
+}
+.tarifs-mobile-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+.tarifs-mobile-btn {
+  width: 100%;
+  justify-content: center;
+}
+
 .btn-cta {
   display: inline-flex;
   align-items: center;
@@ -1072,8 +1194,9 @@ body {
 }
 .contact-val {
   font-family: var(--f-display);
-  font-size: 1.8rem;
+  font-size: clamp(1rem, 4vw, 1.8rem);
   font-weight: 300;
+  word-break: break-all;
   letter-spacing: 0.06em;
   color: var(--on-dark);
   transition: color 0.2s;
@@ -1101,6 +1224,7 @@ body {
   border: 1px solid rgba(232, 227, 225, 0.2);
   font-family: var(--f-mono);
   font-size: 0.58rem;
+  flex-shrink: 0;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--on-dark-muted);
@@ -1115,6 +1239,10 @@ body {
 .btn-copy:hover {
   border-color: var(--hover);
   color: var(--hover-lt);
+}
+@media (max-width: 767px) {
+  .contact-card { padding: 1.25rem; }
+  .email-mask { letter-spacing: 0.04em; font-size: 0.8rem; }
 }
 .badge-dispo {
   display: inline-flex;
@@ -1335,6 +1463,32 @@ body {
 }
 .footer-link:hover {
   color: var(--hover-lt);
+}
+.footer-credits {
+  padding: 0.9rem clamp(1.5rem, 5vw, 3.5rem);
+  border-top: 1px solid rgba(232, 227, 225, 0.07);
+  text-align: center;
+}
+.footer-dev-link {
+  font-family: var(--f-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(232, 227, 225, 0.35);
+  transition: color 0.2s;
+}
+.footer-dev-link:hover {
+  color: rgba(232, 227, 225, 0.7);
+}
+@media (max-width: 767px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-inner nav {
+    justify-content: center;
+  }
 }
 
 /* ═══════════════════════════════════════
@@ -1956,6 +2110,17 @@ body {
 }
 .scroll-hint {
   animation: scrollHint 2.5s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════ */
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+[data-reveal].in-view {
+  animation: revealUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* ═══════════════════════════════════════

@@ -1,70 +1,116 @@
+'use client'
 import Link from 'next/link'
 
 const prestations = [
   {
-    id:'01', titre:'Esquisse & Faisabilité',
-    description:"Analyse du site, étude des contraintes réglementaires, premières intentions spatiales. Le point de départ de tout projet.",
-    inclus:["Analyse du site et du programme","Étude de faisabilité","Esquisses et premières propositions","Réunion de cadrage"],
-    tarif:"1 800 €", unite:'forfait', highlight:false,
+    id: '01', titre: 'Esquisse & Faisabilité',
+    description: "Analyse du site, contraintes réglementaires, premières intentions spatiales.",
+    inclus: ["Analyse du site et du programme", "Étude de faisabilité", "Esquisses et premières propositions", "Réunion de cadrage"],
+    tarif: "1 800 €", unite: 'forfait', highlight: false,
   },
   {
-    id:'02', titre:'Mission Complète',
-    description:"De l'esquisse au suivi de chantier. La mission la plus complète pour un résultat maîtrisé, du crayon à la clef.",
-    inclus:["Esquisse + Avant-Projet","Permis de construire ou déclaration","Dossier de consultation des entreprises","Suivi de chantier et réception"],
-    tarif:"10 – 15% du montant HT des travaux", unite:'honoraires', highlight:true,
+    id: '03', titre: 'Visite Conseil',
+    description: "Un regard expert ponctuel. Analyse, orientations, aide à la décision.",
+    inclus: ["Déplacement, visite sur site", "Diagnostic complet", "Conseil réglementaire", "Aide à la rénovation énergétique"],
+    tarif: "250 € TTC", unite: '125 €/heure', highlight: false,
   },
   {
-    id:'03', titre:'Visite Conseil',
-    description:"Pour les projets qui nécessitent un regard expert ponctuel. Analyse, orientations, aide à la décision.",
-    inclus:["Déplacement, visite sur site","Diagnostic complet","Conseil réglementaire","Aide à la rénovation énergétique"],
-    tarif:"250 € TTC", unite:'125 €/heure', highlight:false,
+    id: '02', titre: 'Mission Complète',
+    description: "De l'esquisse au suivi de chantier. Du crayon à la clef.",
+    inclus: ["Esquisse + Avant-Projet", "Permis de construire ou déclaration", "Dossier de consultation des entreprises", "Suivi de chantier et réception"],
+    tarif: "10 – 15%", unite: 'du montant HT des travaux', highlight: true,
   },
 ]
 
 export default function Tarifs() {
   return (
-    <section id="tarifs" className="sec-sand arch-grid sec-pad">
-      <div className="sep-sand mb-20" />
-
-      <div className="sec-header">
-        <div>
-          <div className="sec-eyebrow">
-            <span className="sec-eyebrow-line" />
-            <p className="t-label">Prestations</p>
-          </div>
-          <h2 className="t-section">Tarifs</h2>
-        </div>
-        <p className="t-body hidden md:block max-w-xs">
-          Ces grilles sont indicatives — un devis précis est toujours établi après première consultation.
-        </p>
-      </div>
-
-      <div className="tarif-grid">
-        {prestations.map(p => (
-          <div key={p.id} className={`tarif-card${p.highlight ? ' featured' : ''}`}>
-            <p className="tarif-card-num">{p.id}</p>
-            <h3 className="tarif-title">{p.titre}</h3>
-            <p className="tarif-desc">{p.description}</p>
-            <ul className="tarif-list">
-              {p.inclus.map(item => <li key={item}>{item}</li>)}
-            </ul>
-            <div className="tarif-footer">
-              <p className="tarif-unite">{p.unite}</p>
-              <p className="tarif-price">{p.tarif}</p>
+    <>
+      {/* ══ DESKTOP : 3 colonnes + fade staggeré ══ */}
+      <section
+        id="tarifs"
+        className="tarifs-desktop sec-sand arch-grid sec-pad hidden md:block"
+      >
+        <div className="sep-sand mb-20" />
+        <div className="sec-header">
+          <div>
+            <div className="sec-eyebrow">
+              <span className="sec-eyebrow-line" />
+              <p className="t-label">Prestations</p>
             </div>
+            <h2 className="t-section">Tarifs</h2>
           </div>
-        ))}
-      </div>
+          <p className="t-body hidden md:block max-w-xs">
+            Ces grilles sont indicatives — un devis précis est toujours établi après première consultation.
+          </p>
+        </div>
 
-      <div className="mt-12 text-center">
-        <p className="t-body mb-6 italic">Toutes les missions peuvent être adaptées à votre projet.</p>
-        <Link href="/#contact" className="btn-cta">
-          Demander un devis
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
-          </svg>
-        </Link>
-      </div>
-    </section>
+        <div className="tarif-grid">
+          {[prestations[0], prestations[2], prestations[1]].map(p => (
+            <div key={p.id} className={`tarif-card${p.highlight ? ' featured' : ''}`}>
+              <h3 className="tarif-title">{p.titre}</h3>
+              <p className="tarif-desc">{p.description}</p>
+              <ul className="tarif-list">
+                {p.inclus.map(item => <li key={item}>{item}</li>)}
+              </ul>
+              <div className="tarif-footer">
+                <p className="tarif-unite">{p.unite}</p>
+                <p className="tarif-price">{p.tarif}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="t-body mb-6 italic">Toutes les missions peuvent être adaptées à votre projet.</p>
+          <Link href="/#contact" className="btn-cta">
+            Demander un devis
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+            </svg>
+          </Link>
+        </div>
+      </section>
+
+      {/* ══ MOBILE : cartes empilées, tout visible ══ */}
+      <section className="tarifs-mobile-section md:hidden sec-sand arch-grid">
+        <div className="sep-sand" style={{ marginBottom: '2rem' }} />
+
+        <div className="sec-eyebrow" style={{ marginBottom: '0.5rem' }}>
+          <span className="sec-eyebrow-line" />
+          <p className="t-label">Prestations</p>
+        </div>
+        <h2 className="tarifs-mobile-title">Tarifs</h2>
+
+        <div className="tarifs-mobile-stack">
+          {prestations.map(p => (
+            <div key={p.id} className={`tarifs-mobile-card${p.highlight ? ' featured' : ''}`}>
+              <div className="tarifs-mobile-card-top">
+                <h3 className="tarifs-mobile-card-title">{p.titre}</h3>
+                <div className="tarifs-mobile-price-block">
+                  <p className="tarifs-mobile-price">{p.tarif}</p>
+                  <p className="tarifs-mobile-unite">{p.unite}</p>
+                </div>
+              </div>
+              <p className="tarifs-mobile-desc">{p.description}</p>
+              <ul className="tarif-list">
+                {p.inclus.map(item => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="tarifs-mobile-cta">
+          <p className="t-body italic" style={{ opacity: 0.6, marginBottom: '1rem' }}>
+            Toutes les missions peuvent être adaptées à votre projet.
+          </p>
+          <Link href="/#contact" className="btn-cta tarifs-mobile-btn">
+            Demander un devis
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+            </svg>
+          </Link>
+        </div>
+      </section>
+    </>
   )
 }
